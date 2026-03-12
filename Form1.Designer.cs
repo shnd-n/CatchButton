@@ -33,11 +33,12 @@
             // 
             // button1
             // 
-            button1.BackColor = SystemColors.GradientActiveCaption;
+            button1.BackColor = SystemColors.ActiveCaption;
             button1.Font = new Font("맑은 고딕", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            button1.Location = new Point(282, 181);
+            button1.ForeColor = SystemColors.Desktop;
+            button1.Location = new Point(270, 154);
             button1.Name = "button1";
-            button1.Size = new Size(263, 117);
+            button1.Size = new Size(271, 121);
             button1.TabIndex = 0;
             button1.Text = "나를 잡아봐";
             button1.UseVisualStyleBackColor = false;
