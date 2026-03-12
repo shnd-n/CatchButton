@@ -16,8 +16,8 @@ namespace CatchButton
             Random rd = new Random();
 
             // 난수 최대치 지정
-            int maxX = this.ClientSize.Width - 271; // 여백의 크기 - 버튼의 크기
-            int maxY = this.ClientSize.Height - 121;
+            int maxX = this.ClientSize.Width - runButton.Size.Width; // 여백의 크기 - 버튼의 크기
+            int maxY = this.ClientSize.Height - runButton.Size.Height;
 
             // 난수 생성
             int x = rd.Next(0, maxX);
