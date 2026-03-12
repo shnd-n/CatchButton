@@ -60,11 +60,14 @@ namespace CatchButton
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, MouseEventArgs e)
         {
             life = 20;      // 목숨 초기화
-            score = 0;     // 점수 초기화
-            runButton.Enabled = true;
+            score = 0;
+            runButton.Enabled = true; // 버튼 활성화
+            runButton.Size = OriButtonSize;
+            scoreBox.Text = $"현재 점수: {score}";
+            lifeBox.Text = $"남은 생명: {life}";
         }
     }
 }
