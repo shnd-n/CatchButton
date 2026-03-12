@@ -7,14 +7,16 @@ namespace CatchButton
     public partial class Form1 : Form
     {
         int score = 0;
+        Size OriButtonSize;
+        int life = 20;
         public Form1()
         {
             InitializeComponent();
+            OriButtonSize = runButton.Size;
         }
 
         private void Form1_MouseEnter(object sender, EventArgs e)
         {
-
             // 난수 생성기 준비
             Random rd = new Random();
 
@@ -46,8 +48,23 @@ namespace CatchButton
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
             SystemSounds.Exclamation.Play();
-            scoreBox.Text = $"현재 점수: {score}";
             score -= 10;    // 점수 감소
+            life -= 1;     // 목숨 감소
+            scoreBox.Text = $"현재 점수: {score}";
+            lifeBox.Text = $"남은 생명: {life}";
+
+            if (life <= 0)
+            {
+                MessageBox.Show("Game Over");
+                runButton.Enabled = false; // 버튼 비활성화
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            life = 20;      // 목숨 초기화
+            score = 0;     // 점수 초기화
+            runButton.Enabled = true;
         }
     }
 }
