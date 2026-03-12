@@ -6,6 +6,7 @@ namespace CatchButton
 {
     public partial class Form1 : Form
     {
+        int score = 0;
         public Form1()
         {
             InitializeComponent();
@@ -30,12 +31,21 @@ namespace CatchButton
 
             // 폼 제목에 버튼 위치 표시
             this.Text = $"현재 버튼위치: ({x}, {y})";
+            scoreBox.Text = $"현재 점수: {score}";
         }
 
         private void runButton_MouseClick(object sender, MouseEventArgs e)
         {
             SystemSounds.Beep.Play();
             MessageBox.Show("버튼을 잡았다!");
+            score += 100;
+        }
+
+        private void Form1_MouseClick(object sender, MouseEventArgs e)
+        {
+            SystemSounds.Beep.Play();
+            scoreBox.Text = $"현재 점수: {score}";
+            score -= 10;
         }
     }
 }

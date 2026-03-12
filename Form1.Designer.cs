@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             runButton = new Button();
+            scoreBox = new TextBox();
             SuspendLayout();
             // 
             // runButton
@@ -45,20 +46,32 @@
             runButton.MouseClick += runButton_MouseClick;
             runButton.MouseEnter += Form1_MouseEnter;
             // 
+            // scoreBox
+            // 
+            scoreBox.Location = new Point(699, -1);
+            scoreBox.Name = "scoreBox";
+            scoreBox.Size = new Size(100, 23);
+            scoreBox.TabIndex = 1;
+            scoreBox.Text = "현재 점수 : 0";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(scoreBox);
             Controls.Add(runButton);
             Name = "Form1";
             Text = "Form1";
+            MouseClick += Form1_MouseClick;
             MouseEnter += Form1_MouseEnter;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Button runButton;
+        private TextBox scoreBox;
     }
 }
