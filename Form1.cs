@@ -38,14 +38,16 @@ namespace CatchButton
         {
             SystemSounds.Beep.Play();
             MessageBox.Show("버튼을 잡았다!");
-            score += 100;
+            score += 100;   // 점수 증가
+            runButton.Size = new Size(runButton.Size.Width / 10 * 9, runButton.Size.Height / 10 * 9); // 버튼 크기 감소
+            runButton.Font = new System.Drawing.Font("맑은 고딕", runButton.Font.Size * 0.9f, runButton.Font.Style); // 버튼 폰트 크기 감소
         }
 
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
-            SystemSounds.Beep.Play();
+            SystemSounds.Exclamation.Play();
             scoreBox.Text = $"현재 점수: {score}";
-            score -= 10;
+            score -= 10;    // 점수 감소
         }
     }
 }
