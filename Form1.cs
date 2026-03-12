@@ -1,3 +1,4 @@
+using System.Media;
 using System.Security.Cryptography;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -12,6 +13,7 @@ namespace CatchButton
 
         private void Form1_MouseEnter(object sender, EventArgs e)
         {
+
             // 난수 생성기 준비
             Random rd = new Random();
 
@@ -28,6 +30,12 @@ namespace CatchButton
 
             // 폼 제목에 버튼 위치 표시
             this.Text = $"현재 버튼위치: ({x}, {y})";
+        }
+
+        private void runButton_MouseClick(object sender, MouseEventArgs e)
+        {
+            SystemSounds.Beep.Play();
+            MessageBox.Show("버튼을 잡았다!");
         }
     }
 }
